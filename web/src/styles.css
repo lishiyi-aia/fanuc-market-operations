@@ -226,36 +226,6 @@ canvas {
   letter-spacing: 0.12em;
   color: rgba(244, 241, 234, 0.7);
 }
-.hero-application {
-  position: absolute;
-  top: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: grid;
-  gap: 4px;
-  width: max-content;
-  max-width: calc(100% - 48px);
-  padding: 10px 22px;
-  border: 1px solid rgba(244, 241, 234, 0.28);
-  border-radius: 14px;
-  background: rgba(14, 24, 20, 0.72);
-  backdrop-filter: blur(12px);
-  text-align: center;
-  font-family: 'Chiron GoRound TC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  color: var(--ink);
-  font-size: 14px;
-  line-height: 1.55;
-  letter-spacing: 0.05em;
-}
-.hero-application strong {
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-}
-@media (max-width: 640px) {
-  .hero-application { top: 86px; padding: 10px 15px; font-size: 12px; }
-  .hero-application strong { font-size: 16px; }
-}
 .hm-tl {
   top: calc(var(--m) + 16px);
   left: calc(var(--m) + 20px);
@@ -293,23 +263,6 @@ canvas {
 /* 入场动画放内层：其 fill:both 只锁内层 opacity，不影响外层滚动 opacity */
 .about-intro {
   animation: fadeDown 1.8s ease both;
-}
-
-.application-target {
-  display: grid;
-  gap: 9px;
-  margin: 0 auto 24px;
-  max-width: min(700px, 88vw);
-  font-family: 'Chiron GoRound TC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: clamp(13px, 1.45vw, 21px);
-  line-height: 1.6;
-  letter-spacing: 0.06em;
-  color: var(--ink);
-}
-.application-target strong {
-  font-size: clamp(17px, 2.1vw, 28px);
-  font-weight: 500;
-  letter-spacing: 0.15em;
 }
 
 .about-title {

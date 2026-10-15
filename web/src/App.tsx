@@ -25,25 +25,21 @@ type Lang = 'en' | 'zh'
 
 const COPY = {
   en: {
-    title: 'Shiyi Li',
-    application: 'Applying to Shanghai FANUC Robotics Co., Ltd.',
-    role: 'Market Operations Specialist',
+    title: 'About Shiyi',
     paragraphs: [
-      "A 2027 Master of Marketing candidate with working English and experience in technology-product communication, social content and campaign execution. I turn product information into promotional materials, coordinate activities and use AI-assisted copy and dashboards to improve the next campaign.",
+      "Shiyi Li · Applying for Market Operations Specialist at Shanghai FANUC Robotics Co., Ltd. A 2027 Master of Marketing candidate with working English and experience in technology-product content, campaigns and channel promotion. I use AI-assisted creation and performance reviews to turn feedback into the next round of action.",
     ],
   },
   zh: {
-    title: '李世怡',
-    application: '应聘上海发那科机器人有限公司',
-    role: '市场运营专员',
+    title: 'About Shiyi',
     paragraphs: [
-      '2027届市场营销硕士，英语可作为工作语言。具备科技产品内容制作、市场推广与活动执行经验，能够将产品功能转化为宣传内容，协调线上线下推广，并运用AI文案与分析看板支持效果复盘。',
+      '李世怡｜上海发那科机器人有限公司 · 市场运营专员岗位申请。2027届市场营销硕士，英语可作为工作语言。围绕科技产品推广，参与市场活动执行、宣传内容与物料制作、渠道推广及合作沟通；借助AI制作与数据复盘，将反馈带回下一轮推广。',
     ],
   },
 }
 
 function Hero({ lang, cueOpacity }: { lang: Lang; cueOpacity: MotionValue<number> }) {
-  const { title, application, role, paragraphs } = COPY[lang]
+  const { title, paragraphs } = COPY[lang]
   const aboutRef = useRef(null)
   // 触发起点提前：about 顶部位于视口 60% 处即开始（offset[0] 进度 0），到达顶部为进度 1
   const { scrollYProgress } = useScroll({
@@ -68,10 +64,6 @@ function Hero({ lang, cueOpacity }: { lang: Lang; cueOpacity: MotionValue<number
       >
         {/* 入场动画放内层，避免其 fill 锁住 opacity 覆盖外层滚动 opacity */}
         <div className="about-intro">
-          <motion.p className="application-target" style={{ y: bodyY }}>
-            <span>{application}</span>
-            <strong>{role}</strong>
-          </motion.p>
           <motion.h1 className="about-title" style={{ y: titleY, letterSpacing: titleSpacing }}>
             {title}
           </motion.h1>
@@ -179,10 +171,6 @@ export default function App() {
       {/* 首屏装饰：发丝内框 + 四角定位标 + 角标元数据（随滚动淡出） */}
       <motion.div className="hero-chrome" style={{ opacity: heroChromeOpacity }} aria-hidden="true">
         <div className="hero-frame" />
-        <div className="hero-application">
-          <span>应聘上海发那科机器人有限公司</span>
-          <strong>市场运营专员</strong>
-        </div>
         <span className="hero-mark tl">+</span>
         <span className="hero-mark tr">+</span>
         <span className="hero-mark bl">+</span>
